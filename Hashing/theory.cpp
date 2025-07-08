@@ -82,6 +82,10 @@ int main(){
         cout<<it.first<<"->"<<it.second<<endl;
     }
 
+        for(auto it : mpp){
+        cout<<it.first<<","<<it.second;
+    }
+
     int q;
     cin>>q;
     while (q--)

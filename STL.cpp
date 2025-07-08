@@ -217,7 +217,7 @@ void explainSet(){   //  SET --> Everything sorted, Everything Unique
 
     int cnt = st.count(1); //Count // if 1 is there in set it will give 1, else zero
 
-    auto it = st.find(3);
+    auto it6 = st.find(3);
     st.erase(it); //takes constant time
 
     set<int>st1 = {1, 2, 3, 4, 5};
@@ -285,6 +285,7 @@ int main()
     // explainSet();
     // explainMultiSet();
     // explainUSet();
+    explainMap();
 
     return 0;   
 }
