@@ -2,6 +2,76 @@
 #include <bits/stdc++.h>
 using namespace std;
 
+
+// Binary Search, Lower & Upper Bound with C++ STL
+
+void binarySearch(){
+    int a[5]={1,4,5,8,9};
+    // check if x exists in sorted array
+
+    bool res = binary_search(a, a+4, 3);
+    bool res1 = binary_search(a, a+4, 3);
+    cout<< res <<endl;
+    cout<< res1 <<endl;
+}
+
+void lowerBound(){
+    int a[]= {1,4,5,6,9,9};
+
+    int ind1 = lower_bound(a, a+5, 4) - a; // --> 1
+    int ind2 = lower_bound(a, a+5, 7) - a; // --> 4
+    int ind3 = lower_bound(a, a+5, 9) - a; // --> 4
+
+   // int ind = lower_bound(a.begin(), a.end(), 4) - a.begin(); --> not for a raw array, but for vectors, stl array, etc.
+    cout<< ind1 << ind2 << ind3;
+}
+
+void upperBound(){
+    int a[]= {1,4,5,6,9,9};
+
+    int ind1 = upper_bound(a, a+5, 4) - a; // --> 2
+    int ind2 = upper_bound(a, a+5, 7) - a; // --> 4
+    int ind3 = upper_bound(a, a+5, 9) - a; // --> 5
+
+   // int ind = upper_bound(a.begin(), a.end(), 4) - a.begin(); --> not for a raw array, but for vectors, stl array, etc.
+    cout<< ind1 << ind2 << ind3;
+}
+
+// ub, lb questions
+void upperboundLowerboundQuestions(){
+    // Q.1 Find the first occurence of a x in a sorted array. if it does not exist, print -1.
+
+  int  a[]=  {1,4,4,4,4,9,9,10,11};
+
+  int x;
+  cin>> x;
+
+  int ind = lower_bound(a, a+9, x) - a;
+
+  ind != 9 && a[ind] == x ? cout<<ind  : cout<< -1;
+  cout<<endl;
+
+  //Q.2 find the last occurence of a x in a sorted array. if it does not exist, print -1.
+   ind = upper_bound(a, a+9, x) - a;
+    ind--;
+
+  ind >=0 && a[ind] == x  ? cout<<ind  : cout<< -1;
+  cout<<endl;
+
+  //Q.3 Find the largest number smaller than x in a sorted array. if no number exists print -1.
+     ind = lower_bound(a, a+9, x) - a;
+    ind--;
+
+  ind >=0 ? cout<<a[ind]  : cout<< -1;
+  cout<<endl;
+
+  //Q.4 find the smallest number greater than x in a sorted array. it no number exists print -1.
+    ind = lower_bound(a, a+9, x) - a;
+    ind < 9 ? cout<<a[ind]  : cout<< -1;
+    cout<<endl;
+}
+
+
 // PAIR
 void explainPair()
 {
@@ -285,7 +355,10 @@ int main()
     // explainSet();
     // explainMultiSet();
     // explainUSet();
-    explainMap();
-
+    // explainMap();
+    // binarySearch();
+    // lowerBound();
+    // upperBound();
+    upperboundLowerboundQuestions();
     return 0;   
 }
