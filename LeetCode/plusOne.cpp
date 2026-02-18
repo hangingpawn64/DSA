@@ -1,24 +1,44 @@
-#include<bits/stdc++.h>
+#include <bits/stdc++.h>
 using namespace std;
 
-    vector<int> plusOne(vector<int>& digits) {
-        unsigned long long num = 0;
-        for(int i=0; i<digits.size(); i++){
-            num = num + digits[i] * pow(10, digits.size() - 1 - i);
+int main()
+{
+    class Solution
+    {
+    public:
+        vector<int> plusOne(vector<int> &digits)
+        {
+            int num = 0;
+            int cnt = 0;
+            vector<int> plusOneDigits = {1};
+            for (int i = 0; i < digits.size(); i++)
+            {
+                if (digits[i] == 9)
+                {
+                    cnt++;
+                }
+            }
+            if (cnt == digits.size())
+            {
+                while (cnt--)
+                {
+                    plusOneDigits.push_back(0);
+                }
+                return plusOneDigits;
+            }
+            for (int i = digits.size() - 1; i >= 0; i--)
+            {
+                if (digits[i] < 9)
+                {
+                    digits[i]++;
+                    return digits;
+                }
+                else
+                {
+                    digits[i] = 0;
+                }
+            }
+            return digits;
         }
-        num++;
-        vector<int>plusOne;
-        string newNum = to_string(num);
-        for(int i = 0; i<newNum.size(); i++){
-            int a = newNum[i] - '0';
-            plusOne.push_back(a);
-        }
-        cout<<num;
-        return plusOne;
-    }
-
-int main(){
-    vector<int> digits = {6, 1, 4, 5, 3, 9, 0, 1, 9, 5, 1, 8, 6, 7, 0, 5, 5, 4, 3};
-    plusOne(digits);
-    return 0;
+    };
 }
