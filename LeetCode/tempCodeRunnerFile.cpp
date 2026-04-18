@@ -1,1 +1,1 @@
-    // int i = 0;
+        // string s = strs[smallest].substr(0,cnt);
