@@ -6,17 +6,17 @@ int main()
     class Solution
     {
     public:
-        bool isPowerOfThree(int n)
+        bool isPowerOfFour(int n)
         {
-            if (n <= 0)
+            if (n == 0)
             {
                 return false;
             }
-            while (n % 3 == 0)
+            while (n % 4 == 0)
             {
-                n /= 3;
+                n /= 4;
             }
-            return (n == 1);
+            return n == 1;
         }
     };
     return 0;
