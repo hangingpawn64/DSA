@@ -48,6 +48,29 @@ class Solution {
     }
 };
 
+//recursive method
+
+class Solution {
+public:
+
+    vector<int>pre;
+
+    void preOrder(TreeNode *node){
+        if(node == nullptr){return;}
+        pre.push_back(node->val);
+        if(node->left != nullptr){
+            preOrder(node->left);
+        }
+        preOrder(node->right);
+    }
+
+    vector<int> preorderTraversal(TreeNode* root) {
+        preOrder(root);
+        return  pre;
+    }
+};
+
+
 int main(){
     
     return 0;
