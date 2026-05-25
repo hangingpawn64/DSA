@@ -69,7 +69,25 @@ public:
         return  pre;
     }
 };
+class Solution {
+public:
 
+    vector<int>in;
+
+    void inOrder(TreeNode *node){
+        if(node == nullptr){return;}
+        if(node->left != nullptr){
+            inOrder(node->left);
+        }
+        in.push_back(node->val);
+        inOrder(node->right);
+    }
+
+    vector<int> inorderTraversal(TreeNode* root) {
+        inOrder(root);
+        return in;
+    }
+};
 
 int main(){
     
