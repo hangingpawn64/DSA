@@ -50,6 +50,25 @@ public:
     }
 };
 
+class Solution {
+public:
+    vector<int>post;
+
+    void postOrder(TreeNode *node){
+        if(node == nullptr){return;}
+        if(node->left != nullptr){
+            postOrder(node->left);
+        }
+        postOrder(node->right);
+        post.push_back(node->val);
+    }
+
+    vector<int> postorderTraversal(TreeNode* root) {
+        postOrder(root);
+        return post;
+    }
+};
+
 int main(){
     
     return 0;
